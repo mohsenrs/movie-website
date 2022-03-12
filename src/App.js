@@ -10,17 +10,19 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <Switch>
-        <Route path='/'>
-          <Home />
-        </Route>
-        <Route path='movie/:id'>
-          <MovieDetail />
-        </Route>
-        <Route>
-          <PageNotFound />
-        </Route>
-      </Switch>
+      <div className='container'>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/movie/:id'>
+            <MovieDetail />
+          </Route>
+          <Route>
+            <PageNotFound />
+          </Route>
+        </Switch>
+      </div>
       <Footer />
     </div>
   )
