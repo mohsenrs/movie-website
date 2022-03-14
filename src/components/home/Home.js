@@ -19,6 +19,7 @@ function Home() {
 
     fetchMovie()
   }, [])
+
   return (
     <>
       <div className='banner-image'></div>
