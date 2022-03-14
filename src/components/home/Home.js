@@ -17,7 +17,18 @@ function Home() {
       dispatch(moviesActions.addMovies(response.data))
     }
 
+    const fetchShow = async () => {
+      const response = await MovieApi.get(
+        `?apikey=${APIkey}&s=Friends&type=series`
+      ).catch((err) => console.log('err:', err))
+
+      console.log('shows:', response.data);
+
+      dispatch(moviesActions.addShows(response.data))
+    }
+
     fetchMovie()
+    fetchShow()
   }, [])
 
   return (

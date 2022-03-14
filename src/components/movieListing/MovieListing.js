@@ -5,9 +5,11 @@ import './movieListing.scss'
 
 function MovieListing() {
   const movies = useSelector((state) => state.movies.movies)
-  console.log(movies)
-  
-  let renderMovies = ''
+  const shows = useSelector((state) => state.movies.shows)
+  // console.log(movies)
+  // console.log(shows)
+
+  let renderMovies, renderShows = ''
 
   renderMovies =
     movies.Response === 'True' ? (
@@ -20,13 +22,28 @@ function MovieListing() {
       </div>
     )
 
+  renderShows =
+    shows.Response === 'True' ? (
+      shows.Search.map((show, index) => (
+        <MovieCard key={index} data={show} />
+      ))
+    ) : (
+      <div className='shows-error'>
+        <h3>{shows.Error}</h3>
+      </div>
+    )
+
   return (
-    <div className='movie-wrapper'>
+    <>
       <div className='movie-list'>
         <h2>movies</h2>
         <div className='movie-container'>{renderMovies}</div>
       </div>
-    </div>
+      <div className='show-list'>
+        <h2>shows</h2>
+        <div className='show-container'>{renderShows}</div>
+      </div>
+    </>
   )
 }
 
