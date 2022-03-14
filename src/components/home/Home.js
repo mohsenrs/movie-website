@@ -23,8 +23,6 @@ function Home() {
         `?apikey=${APIkey}&s=Friends&type=series`
       ).catch((err) => console.log('err:', err))
 
-      console.log('shows:', response.data);
-
       dispatch(showsActions.addShows(response.data))
     }
 
