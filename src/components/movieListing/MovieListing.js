@@ -5,7 +5,7 @@ import './movieListing.scss'
 
 function MovieListing() {
   const movies = useSelector((state) => state.movies.movies)
-  const shows = useSelector((state) => state.movies.shows)
+  const shows = useSelector((state) => state.shows.shows)
   // console.log(movies)
   // console.log(shows)
 

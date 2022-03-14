@@ -4,6 +4,7 @@ import MovieApi from '../../common/MovieApi'
 import { APIkey } from '../../common/MovieApiKey'
 import { useDispatch } from 'react-redux'
 import { moviesActions } from './../../features/movies/movieSlice'
+import { showsActions } from './../../features/shows/showSlice';
 
 function Home() {
   const dispatch = useDispatch()
@@ -24,7 +25,7 @@ function Home() {
 
       console.log('shows:', response.data);
 
-      dispatch(moviesActions.addShows(response.data))
+      dispatch(showsActions.addShows(response.data))
     }
 
     fetchMovie()
