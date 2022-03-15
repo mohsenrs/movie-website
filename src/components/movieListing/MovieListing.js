@@ -5,11 +5,12 @@ import './movieListing.scss'
 
 function MovieListing() {
   const movies = useSelector((state) => state.movies.movies)
-  const shows = useSelector((state) => state.shows.shows)
-  // console.log(movies)
-  // console.log(shows)
+  const shows = useSelector((state) => state.movies.shows)
+  console.log('movies:', movies)
+  console.log('shows:', shows)
 
-  let renderMovies, renderShows = ''
+  let renderMovies,
+    renderShows = ''
 
   renderMovies =
     movies.Response === 'True' ? (
@@ -24,9 +25,7 @@ function MovieListing() {
 
   renderShows =
     shows.Response === 'True' ? (
-      shows.Search.map((show, index) => (
-        <MovieCard key={index} data={show} />
-      ))
+      shows.Search.map((show, index) => <MovieCard key={index} data={show} />)
     ) : (
       <div className='shows-error'>
         <h3>{shows.Error}</h3>
