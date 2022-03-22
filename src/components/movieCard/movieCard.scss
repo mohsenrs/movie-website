@@ -26,9 +26,14 @@
 .card-info {
   color: $font-primary;
 
-  h4 {
+  div {
     font-size: 22px;
     font-weight: 400;
     margin-bottom: 10px;
+    // height: 70px;
+    // white-space: nowrap;
+    // width: 99%;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
   }
 }

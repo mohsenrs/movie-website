@@ -4,7 +4,7 @@ import './movieCard.scss'
 
 function MovieCard({ data }) {
   return (
-    <div className='card-item'>
+    <div className='card-item' title={data.Title}>
       <Link to={`/movie/${data.imdbID}`}>
         <div className='card-inner'>
           <div className='card-top'>
@@ -12,7 +12,7 @@ function MovieCard({ data }) {
           </div>
           <div className='card-bottom'>
             <div className='card-info'>
-              <h4>{data.Title}</h4>
+              <div>{data.Title}</div>
               <p>{data.Year}</p>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import MovieCard from './../movieCard/MovieCard'
+import MovieSlider from '../movieSlider/MovieSlider'
 import './movieListing.scss'
 
 function MovieListing() {
@@ -25,7 +26,7 @@ function MovieListing() {
 
   renderShows =
     shows.Response === 'True' ? (
-      shows.Search.map((show, index) => <MovieCard key={index} data={show} />)
+      shows.Search.map((show, index) => <MovieCard key={index} data={show}  />)
     ) : (
       <div className='shows-error'>
         <h3>{shows.Error}</h3>
@@ -35,6 +36,7 @@ function MovieListing() {
   return (
     <>
       <div className='movie-list'>
+        <MovieSlider movies={renderMovies} />
         <h2>movies</h2>
         <div className='movie-container'>{renderMovies}</div>
       </div>
